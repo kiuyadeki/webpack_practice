@@ -1,4 +1,6 @@
 const path = require('path'); //node.jsにデフォルトで入っているpathモジュールを使用
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
 module.exports = {
     entry: './src/index.js',
@@ -12,7 +14,7 @@ module.exports = {
                 test: /\.css/, //.cssを検知する
                 use: [
                     {
-                        loader: 'style-loader', //loaderは下から上に適用されるので、css-loader, style-loaderの順になる。
+                        loader: MiniCssExtractPlugin.loader, //loaderは下から上に適用されるので、css-loader, MiniCssExtractPlugin.loaderの順になる。
                     },
                     {
                         loader: 'css-loader' //.cssが見つかれば、このルールを適用する。
@@ -21,4 +23,10 @@ module.exports = {
             },
         ],
     },
+    plugins: [
+        new MiniCssExtractPlugin(),
+        new HtmlWebpackPlugin({
+            template: './src/index.html',
+        }),
+    ],
 }
