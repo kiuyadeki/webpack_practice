@@ -1,12 +1,13 @@
 const path = require('path'); //node.jsにデフォルトで入っているpathモジュールを使用
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
-    entry: './src/index.js',
+    entry: './src/scripts/main.js',
     output: {
         path: path.resolve(__dirname, './dist'), //path.resolveで絶対パスを取得、第一引数(__dirname)が現在の階層を表す
-        filename: 'main.js', // 出力されるファイル名
+        filename: 'scripts/main.js', // 出力されるファイル名
     },
     module: {
         rules: [
@@ -24,9 +25,12 @@ module.exports = {
         ],
     },
     plugins: [
-        new MiniCssExtractPlugin(),
-        new HtmlWebpackPlugin({
-            template: './src/index.html',
+        new MiniCssExtractPlugin({
+            filename: './styles/main.css', //出力後のcssファイル名を指定
         }),
+        new HtmlWebpackPlugin({
+            template: './src/templates/index.html',
+        }),
+        new CleanWebpackPlugin(),
     ],
 }
