@@ -34,14 +34,33 @@ module.exports = {
                     },
                 ],
             },
+            {
+                test: /\.pug/,
+                use: [
+                    {
+                        loader: 'html-loader',
+                    },
+                    {
+                        loader: 'pug-html-loader',
+                        options: {
+                            pretty: true,
+                        }
+                    },
+                ]
+            },
         ],
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: './styles/main.css', //出力後のcssファイル名を指定
+          filename: './styles/main.css', //出力後のcssファイル名を指定
         }),
         new HtmlWebpackPlugin({
-            template: './src/templates/index.html',
+          template: './src/templates/index.pug',
+          filename: 'index.html',
+        }),
+        new HtmlWebpackPlugin({
+          template: './src/templates/access.pug', //htmlをビルドする場合はindex.html
+          filename: 'access.html',
         }),
         new CleanWebpackPlugin(),
     ],
