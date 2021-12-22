@@ -1,4 +1,8 @@
 body {
-    color: lightcoral;
+  color: lightcoral;
+}
+body h1 {
+  background-color: lightblue;
 }
 
+/*# sourceMappingURL=main.css.map*/
