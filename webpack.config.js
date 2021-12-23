@@ -22,6 +22,7 @@ module.exports = {
               options: {
                 presets: [
                   ['@babel/preset-env', {'targets': '> 0.25%, not dead'}], //公式のサポートが終了しておらず、0.25%以上のシェアがあるブラウザを対象とする。
+                  '@babel/preset-react',
                 ],
               },
             },
