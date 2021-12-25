@@ -9,7 +9,7 @@ module.exports = {
     entry: './src/scripts/main.js',
     output: {
         path: path.resolve(__dirname, './dist'), //path.resolveで絶対パスを取得、第一引数(__dirname)が現在の階層を表す
-        filename: 'scripts/main.js', // 出力されるファイル名
+        filename: 'scripts/[name]-[hash].js', // 出力されるファイル名
     },
     module: {
       rules: [
@@ -66,7 +66,7 @@ module.exports = {
                     loader: 'file-loader',
                     options: {
                         esModule: false,
-                        name: 'images/[name].[ext]', //[name].[ext]で元のファイル名と拡張子のまま出力する
+                        name: 'images/[name]-[hash].[ext]', //[name].[ext]で元のファイル名と拡張子のまま出力する
                         publicPath: '/',
                     }
                 },
@@ -99,7 +99,7 @@ module.exports = {
     },
     plugins: [
         new MiniCssExtractPlugin({
-          filename: './styles/main.css', //出力後のcssファイル名を指定
+          filename: './styles/[name]-[hash].css', //出力後のcssファイル名を指定
         }),
         new HtmlWebpackPlugin({
           template: './src/templates/index.pug',
