@@ -28635,6 +28635,43 @@ if (false) {} else {
 
 /***/ }),
 
+/***/ "./src/scripts/Alert.tsx":
+/*!*******************************!*\
+  !*** ./src/scripts/Alert.tsx ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
+
+var Alert = function (_a) {
+    var message = _a.message;
+    return (react__WEBPACK_IMPORTED_MODULE_0__["createElement"]("div", null, message));
+};
+/* harmony default export */ __webpack_exports__["default"] = (Alert);
+
+
+/***/ }),
+
+/***/ "./src/scripts/add.ts":
+/*!****************************!*\
+  !*** ./src/scripts/add.ts ***!
+  \****************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony default export */ __webpack_exports__["default"] = (function (a, b) {
+    return "Result is " + (a + b);
+});
+
+
+/***/ }),
+
 /***/ "./src/scripts/main.js":
 /*!*****************************!*\
   !*** ./src/scripts/main.js ***!
@@ -28648,12 +28685,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _my_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./my.js */ "./src/scripts/my.js");
 /* harmony import */ var _styles_main_scss__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../styles/main.scss */ "./src/styles/main.scss");
 /* harmony import */ var _styles_main_scss__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(_styles_main_scss__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var _add_ts__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./add.ts */ "./src/scripts/add.ts");
 
 
  //cssをモジュールとしてインポートする。
 
+
 console.log('webpack!');
 Object(_my_js__WEBPACK_IMPORTED_MODULE_1__["default"])();
+console.log(Object(_add_ts__WEBPACK_IMPORTED_MODULE_3__["default"])(3, 9));
 
 /***/ }),
 
@@ -28700,11 +28740,16 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react_dom__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react_dom__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _Alert_tsx__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./Alert.tsx */ "./src/scripts/Alert.tsx");
 
  //ライブラリのimport
 
+
+
 var App = function App(props) {
-  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("div", null, "Hello, React App!");
+  return /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__["createElement"]("div", null, "Hello, React App!", /*#__PURE__*/react__WEBPACK_IMPORTED_MODULE_1__["createElement"](_Alert_tsx__WEBPACK_IMPORTED_MODULE_2__["default"], {
+    message: "Success"
+  }));
 };
 
 var reactRoot = document.getElementById('react-root');
