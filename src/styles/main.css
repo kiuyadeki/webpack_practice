@@ -1,7 +1,6 @@
-@import './menu.scss';
-
 html, body, div, p, img, h1, h2, h3, h4, h5 {
-  box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 body {
@@ -9,9 +8,9 @@ body {
   padding: 0;
   font-size: 16px;
   font-family: sans-serif;
-  h1 {
-    font-size: 2em;
-  }
+}
+body h1 {
+  font-size: 2em;
 }
 
 .container {
@@ -22,7 +21,7 @@ body {
 }
 
 .main-image {
-  background-image: url('../images/thumbnail.jpg');
+  background-image: url("../images/thumbnail.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center center;
@@ -32,15 +31,10 @@ body {
   border-radius: 2em;
 }
 
-$text-color: orange;
-
-.content {
-  .title {
-    font-size: 24px;
-    color: $text-color;
-  }
-  .title-lg {
-    @extend .title;
-    font-size: 32px;
-  }
+.content .title, .content .title-lg {
+  font-size: 24px;
+  color: orange;
 }
+.content .title-lg {
+  font-size: 32px;
+}/*# sourceMappingURL=main.css.map */

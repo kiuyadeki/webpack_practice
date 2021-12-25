@@ -67,6 +67,7 @@ module.exports = {
                     options: {
                         esModule: false,
                         name: 'images/[name].[ext]', //[name].[ext]で元のファイル名と拡張子のまま出力する
+                        publicPath: '/',
                     }
                 },
                 {
